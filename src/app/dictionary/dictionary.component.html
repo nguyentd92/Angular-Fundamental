@@ -1,0 +1,23 @@
+
+    <h5>Example Dictionary</h5>
+    <button (click)='isShowForm = !isShowForm'>{{ !isShowForm ? 'Add word' : 'Hide Form'}}</button>
+    <button (click)='editMode = !editMode'>EditMode</button>
+    <div *ngIf="isShowForm">
+      <input type="text" placeholder="english" [(ngModel)]="newEn">
+      <input type="text" placeholder="vietnamese" [(ngModel)]="newVn">
+      <button (click)='addWord()'>Add</button>
+    </div>
+    <div>
+      <select [(ngModel)]="showMode">
+        <option value="all">All</option>
+        <option value="memorized">Memorized</option>
+        <option value="un-memorized">Un-Memorized</option>
+      </select>
+    </div>
+    <div *ngFor="let word of words">
+      <div *ngIf="toBeShow(word)"  (click)='word.memorized = !word.memorized'>
+        <label for="" [ngStyle]="{color: word.memorized ? 'green' : 'red'}"><b>{{ word.en }}</b></label><br>
+        <label for="">{{ word.vn }}</label><br>
+        <button *ngIf="editMode" (click)="removeWord(word)">Remove</button>
+      </div>
+    </div>

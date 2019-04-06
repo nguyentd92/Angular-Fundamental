@@ -1,0 +1,25 @@
+<div>
+  <h2>Struct</h2>
+</div>
+<hr>
+<div class="row">
+  <div class="col">
+    <div *ngIf="isShow">
+      <h5>ngFor</h5>
+      <ul>
+        <li *ngFor="let subject of subjects">{{ subject }}</li>
+      </ul>
+    </div>
+    <button (click)="isShow = !isShow">Toggle</button>
+    <div>
+      <h5>ngFor subject</h5>
+      <ul>
+        <li *ngFor="let subject of objSubjects">{{ subject.name }} - {{ subject.company ? subject.company : 'Unknown' }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col">
+    <app-dictionary></app-dictionary>
+  </div>
+</div>

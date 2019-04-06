@@ -1,14 +1,29 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
+import { StructComponent } from './struct/struct.component';
+import { AppRoutingModule } from './app-routing.module';
+import { DictionaryComponent } from './dictionary/dictionary.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
+import { ViewChildComponent } from './view-child/view-child.component';
+import { ViewChildParentComponent } from './view-child-parent/view-child-parent.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    StructComponent,
+    DictionaryComponent,
+    ParentComponent,
+    ChildComponent,
+    ViewChildComponent,
+    ViewChildParentComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

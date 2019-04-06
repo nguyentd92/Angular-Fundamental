@@ -1,0 +1,18 @@
+<h3>Input - Output</h3>
+<hr>
+<div class="row">
+  <div class="col-md">    
+    <div class="card">
+      <div class="card-header"><b>Parent</b></div>
+      <div class="card-body">
+        <p>{{ parentValue }}</p>
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-secondary" (click)='addChildValue()'>Add Child Value</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md">
+    <app-child (addParentValue)="addValue()" [childValue]='childValue' (changeParentValue)="changeValue($event)"></app-child>
+  </div>
+</div>
